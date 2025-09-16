@@ -1,15 +1,19 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import javax.swing.JFrame;
+
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        // Create a new JFrame
+        JFrame frame = new JFrame() ;
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        // Set the size, title, and exit operationframe.  Open at the center of the screen
+        frame.setTitle("Random Bar Chart");
+        frame.setSize(400, 400) ;
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setLocationRelativeTo(null); // this will cause the frame to open in the middle of the screen instead of top left corner
+
+        // Instantiate a new JComponent object, then make the JFrame visible
+        Graph barChart = new Graph(10);
+        frame.add(barChart);  
+        frame.setVisible(true);
     }
 }
